@@ -17,10 +17,24 @@ const insert_book = db.prepare(/*sql*/ `
         RETURNING book_id, title, author, review, rating, created_at
 `);
 
-function createBook(title, author, review, rating, user_id) {
-  return insert_book.get({ title, author, review, rating, user_id });
+// If there's a bug - check see if created_at is the problem
+function createBook(title, author, review, rating, user_id, created_at) {
+  return insert_book.get({
+    title,
+    author,
+    review,
+    rating,
+    user_id,
+    created_at,
+  });
 }
 
-// Need to do list books function after lunch
+const select_books = db.prepare(/* sql */ `
+    SELECT title, author, review, rating, created_at FROM books WHERE user_id = ?
+`);
 
-module.exports = { createBook };
+function displayBooks(user_id) {
+  return select_books.all(user_id);
+}
+
+module.exports = { createBook, displayBooks };
