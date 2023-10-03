@@ -4,7 +4,7 @@ const { reset, request } = require("./helpers.js");
 const { getUserByEmail } = require("../src/model/user.js");
 
 test("POST /sign-up creates new user", async () => {
-  //   reset();
+  reset();
 
   const { status, headers } = await request("/sign-up", {
     method: "POST",
