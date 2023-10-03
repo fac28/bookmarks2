@@ -16,6 +16,8 @@ CREATE TABLE IF NOT EXISTS sessions (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Should the primary key be called just id or eg. book_id - is there a reason why?
+
 CREATE TABLE IF NOT EXISTS books (
   book_id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER REFERENCES users(id),
