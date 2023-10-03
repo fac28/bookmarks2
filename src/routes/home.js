@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   //to do
-  res.send("<h1>Hi</h1>");
+  res.send("<h1>Hi, are you an existing user?</h1>");
 });
 
 module.exports = router;
