@@ -7,14 +7,14 @@ const insert_book = db.prepare(/*sql*/ `
             title,
             author,
             review,
-            rating)
+            rating )
         VALUES (
             $user_id,
             $title,
             $author,
             $review,
             $rating )
-        RETURNING title, author, review, rating, rating
+        RETURNING book_id, title, author, review, rating, created_at
 `);
 
 function createBook(title, author, review, rating, user_id) {
