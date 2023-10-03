@@ -12,6 +12,7 @@ const userPageRoute = require('./routes/bookpage.js');
 
 // const cookies = cookieParser(process.env.COOKIE_SECRET);
 const cookies = cookieParser('secret');
+const body = express.urlencoded({ extended: false });
 
 //Middleware
 // server.use((req, res, next) => {
@@ -28,5 +29,5 @@ server.use('/', homeRoutes);
 server.use('/sign-up', signUpRoutes);
 server.use('/my-shelf', userPageRoute);
 server.get('/my-shelf/:user_id', userPageRoute.get);
-// server.post('/my-shelf/:user_id', body, bookpage.post);
+server.post('/my-shelf/:user_id', body, userPageRoute.post);
 module.exports = server;

@@ -1,4 +1,4 @@
-const db = require('../database.db');
+const db = require("../database/db.js");
 
 // Play with removing the returning on line 17 once everything is working
 const insert_book = db.prepare(/*sql*/ `
@@ -14,27 +14,20 @@ const insert_book = db.prepare(/*sql*/ `
             $author,
             $review,
             $rating )
-        RETURNING book_id, title, author, review, rating, created_at
+        RETURNING id, title, author, review, rating, created_at
 `);
 
 // If there's a bug - check see if created_at is the problem
-function createBook(title, author, review, rating, user_id, created_at) {
-  return insert_book.get({
-    title,
-    author,
-    review,
-    rating,
-    user_id,
-    created_at,
-  });
+function createBook({ user_id, title, author, review, rating }) {
+  return insert_book.get({ user_id, title, author, review, rating });
 }
 
 const select_books = db.prepare(/* sql */ `
     SELECT title, author, review, rating, created_at FROM books WHERE user_id = ?
 `);
 
-function displayBooks(user_id) {
+function getBooks(user_id) {
   return select_books.all(user_id);
 }
 
-module.exports = { createBook, displayBooks };
+module.exports = { createBook, getBooks };
