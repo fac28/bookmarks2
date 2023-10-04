@@ -10,8 +10,8 @@ const userPageRoute = require('./routes/bookpage.js');
 
 // To DO -> store the secret variable in the env variables
 
-// const cookies = cookieParser(process.env.COOKIE_SECRET);
-const cookies = cookieParser('secret');
+const cookies = cookieParser(process.env.COOKIE_SECRET);
+
 const body = express.urlencoded({ extended: false });
 
 //Middleware
