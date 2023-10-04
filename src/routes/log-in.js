@@ -1,4 +1,4 @@
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
 const templates = require("../templates.js");
@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
       sameSite: "lax",
       httpOnly: true,
     });
-    res.redirect(`/my-shelf/${user.id}`)
+    res.redirect(`/my-shelf/${user.id}`);
   }
 });
 

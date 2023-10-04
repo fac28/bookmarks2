@@ -80,8 +80,8 @@ function displayYourBooks(books) {
           <input type="text" id="review" name="review" required>
         </div>
         <div class="Stack" style="--gap: 0.25rem">
-          <label for="rating">Rating</label>
-          <input type="number" id="rating" name="rating" min="1" max="5" required>
+          <label for="rating">Rating: </label>
+    <input name="rating" type="range" min="0" max="5" step="0.5" required>
         </div>
         <button>Add Your Review</button>
       </form>
@@ -99,11 +99,15 @@ function displayYourBooks(books) {
           )
           .join("")}
       </ul>
+      <a href="/log-out" class="Button">Log out</a>
     </div> 
   `;
 }
 
-
-module.exports = {homePage, signUpPage, addBookReview, displayYourBooks, logIn };
-
-
+module.exports = {
+  homePage,
+  signUpPage,
+  addBookReview,
+  displayYourBooks,
+  logIn,
+};
