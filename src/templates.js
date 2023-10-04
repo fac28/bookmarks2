@@ -1,3 +1,5 @@
+const { ratingsConverter } = require("./utils/ratingsConverter");
+
 function homePage() {
   return /*html*/ `
   <h1>Bookmarks</h1>
@@ -81,7 +83,7 @@ function displayYourBooks(books) {
         </div>
         <div class="Stack" style="--gap: 0.25rem">
           <label for="rating">Rating: </label>
-    <input name="rating" type="range" min="0" max="5" step="0.5" required>
+    <input name="rating" type="range" min="0" max="5" step="1" required>
         </div>
         <button>Add Your Review</button>
       </form>
@@ -93,7 +95,7 @@ function displayYourBooks(books) {
               <h2>${entry.title}</h2>
               <p>${entry.author}</p>
               <p>${entry.review}</p>
-              <p>${entry.rating}</p>
+              <p>${ratingsConverter(entry.rating)}</p>
             </li>
             `
           )
