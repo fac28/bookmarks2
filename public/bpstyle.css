@@ -23,16 +23,10 @@ h1 {
 }
 
 ul {
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 
 /* Hover state */
 .logOutButton:hover {
-  background-color: #2980b9; /* Darker background color on hover */
-}
-
-/* Focus state (for keyboard navigation) */
-.logOutButton:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 3px #3498db; /* Add a subtle box-shadow on focus */
+  background-color: #f5c1c1; /* Darker background color on hover */
 }
