@@ -1,4 +1,4 @@
-const db = require('../database/db');
+const db = require("../database/db");
 
 const insert_user = db.prepare(/*sql*/ `
     INSERT INTO users (email, hash)
