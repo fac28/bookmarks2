@@ -2,7 +2,7 @@
 
 An app that lets the user easily add their favorite books to their personal bookshelf.
 
-Check it out on this link!
+Check it out on this link!<br>
 https://bookmarksfac28.fly.dev/ 
 
 
@@ -38,9 +38,32 @@ npm start
 
 2. Open your web browser and visit http://localhost:3000 to access Bookmarks2 locally.
 
+### For developers
 
+To run the project locally, follow these steps:
 
+1. Start the Node.js server:
+
+```shell
+npm run seed
+```
+
+2.
+
+```shell
+npm run dev
+```
+
+### Team
+
+Issy: UX/UI 
+Elena: Scrum
+George: DevOps 
+Tommaso: QA  
+
+### Schema
 
 <div align="center">
   <img src="https://github.com/fac28/bookmarks/assets/59057287/4c83fbb1-8a05-4adb-a2a9-29bb88c71ffa" width="600"/>
 </div>
+
