@@ -6,6 +6,7 @@ function layout(title, content) {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>${title}</title>
+      <link rel="stylesheet" href="normalize.css">
       <link rel="stylesheet" href="style.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,14 +22,16 @@ function layout(title, content) {
 function homePage() {
   const title = "Home page"
   const content = /*html*/ `
-  <div class="container">
-    <div>
-      <h1>Bookmarks</h1>
-      <h2>The top secret bookshelf, shhhh</h2>
-    </div>
-    <div>
-      <a href="/sign-up" class="Button">Sign up</a>
-      <a href="/log-in" class="Button">Log in</a>
+  <div class="hero">
+    <div class="container">
+      <div class="container1">
+        <h1>Bookmarks</h1>
+        <h2>The top secret bookshelf, shhhh</h2>
+      </div>
+      <div class="container2">
+        <a href="/sign-up" class="Button">Sign up</a>
+        <a href="/log-in" class="Button">Log in</a>
+      </div>
     </div>
   </div>
   `;
