@@ -23,11 +23,17 @@ function createBook({ user_id, title, author, review, rating }) {
 }
 
 const select_books = db.prepare(/* sql */ `
-    SELECT title, author, review, rating, created_at FROM books WHERE user_id = ?
+    SELECT id,title, author, review, rating, created_at FROM books WHERE user_id = ?
 `);
 
 function getBooks(user_id) {
   return select_books.all(user_id);
 }
 
-module.exports = { createBook, getBooks };
+const delete_book = db.prepare(/*sql*/ `DELETE FROM books WHERE id = ?`);
+
+function deleteBook(book_id) {
+  return delete_book.run(book_id);
+}
+
+module.exports = { createBook, getBooks, deleteBook };

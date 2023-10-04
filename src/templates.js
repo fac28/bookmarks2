@@ -85,7 +85,7 @@ function displayYourBooks(books) {
           <label for="rating">Rating: </label>
     <input name="rating" type="range" min="0" max="5" step="1" required>
         </div>
-        <button>Add Your Review</button>
+        <button>Add book</button>
       </form>
       <ul class="Center Stack">
         ${books
@@ -97,6 +97,10 @@ function displayYourBooks(books) {
               <p>${entry.review}</p>
               <p>${ratingsConverter(entry.rating)}</p>
             </li>
+            <form action="/delete" method="POST">
+            <input type="hidden" name="book_id" value="${entry.id}">
+            <button class="form__button-icon delete" type="submit">Delete</button>
+          </form>
             `
           )
           .join("")}
