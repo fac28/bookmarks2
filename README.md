@@ -67,3 +67,21 @@ Tommaso: QA
   <img src="https://github.com/fac28/bookmarks/assets/59057287/4c83fbb1-8a05-4adb-a2a9-29bb88c71ffa" width="600"/>
 </div>
 
+### Security 
+
+Session Management:
+
+Will you store session info in a cookie (stateless) or in your database (stateful)?
+The session information is stored in a stateful manner in the database. The code uses sessions stored in the database to manage user authentication.
+Authentication:
+
+How will you check a user’s identity (authentication)?
+User identity is authenticated by comparing the provided password with the hashed password stored in the database. This is done using the bcrypt.compare method in the login route.
+Authorization:
+
+How will you control what actions a user can take (authorization)?
+The code includes authorization logic in routes like /my-shelf/:user_id. It checks if the user trying to access a particular user's bookshelf is the owner of that bookshelf. If not, it returns a 401 Unauthorized status, indicating that the user is not allowed to access that resource.
+CSRF Mitigation:
+
+How will you mitigate Cross-site Request Forgery (CSRF) attacks?
+The code does not explicitly implement CSRF mitigation measures. CSRF protection typically involves generating and validating tokens on form submissions to ensure that requests originate from trusted sources. CSRF tokens are not present in the provided code.
