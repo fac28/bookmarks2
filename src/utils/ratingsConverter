@@ -1,0 +1,8 @@
+function ratingsConverter(number) {
+  // Create a string of star emojis based on the input number
+  const starEmojis = "⭐".repeat(number);
+
+  return starEmojis;
+}
+
+module.exports = { ratingsConverter };
