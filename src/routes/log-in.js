@@ -6,6 +6,7 @@ const { getUserByEmail } = require("../model/user");
 const { createSession } = require("../model/session");
 
 router.get("/", (req, res) => {
+  const content = templates.logIn();
   res.send(templates.logIn());
 });
 

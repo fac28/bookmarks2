@@ -14,13 +14,7 @@ const logOutRoutes = require("./routes/log-out.js");
 const cookies = cookieParser(process.env.COOKIE_SECRET);
 const body = express.urlencoded({ extended: false });
 
-//Middleware
-// server.use((req, res, next) => {
-//   const time = new Date().toLocaleTimeString("en-GB");
-//   console.log(`${time} ${req.method} ${req.url}`);
-//   next();
-// });
-
+server.use(express.static("public"));
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookies);
 
