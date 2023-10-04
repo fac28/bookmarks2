@@ -4,11 +4,10 @@ const server = require(`../${DIR}/server.js`);
 const db = require(`../${DIR}/database/db.js`);
 const { createUser, getUserByEmail } = require(`../${DIR}/model/user.js`);
 const { getSession, createSession } = require(`../${DIR}/model/session.js`);
-const { listConfessions } = require(`../${DIR}/model/confessions.js`);
 
 function reset() {
   db.exec(/*sql*/ `
-    DELETE FROM confessions;
+    DELETE FROM books;
     DELETE FROM sessions;
     DELETE FROM users;
     DELETE FROM sqlite_sequence WHERE name IN ('confessions', 'sessions', 'users');
@@ -40,7 +39,6 @@ module.exports = {
   getUserByEmail,
   getSession,
   createSession,
-  listConfessions,
   request,
   get_sid,
 };
