@@ -39,3 +39,22 @@ test("POST /log-in creates a new session", async () => {
     `Expected session to contain user_id 1, but got ${session.user_id}`
   );
 });
+
+test("POST /log-in with incorrect password returns error", async () => {
+  reset();
+  const hash = await bcrypt.hash("meshuggah", 12);
+  createUser("user@test.com", hash);
+
+  const { status } = await request("/log-in", {
+    method: "POST",
+    body: "email=user@test.com&password=tool",
+    redirect: "manual",
+    headers: { "content-type": "application/x-www-form-urlencoded" },
+  });
+
+  assert.equal(
+    status,
+    400,
+    `Expected log in with wrong password to return 400 status but got instead: ${status}`
+  );
+});
