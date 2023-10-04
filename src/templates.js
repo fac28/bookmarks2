@@ -44,44 +44,50 @@ function homePage() {
 
 function signUpPage() {
   const title = "Sign up page";
+  const style = "../signup.css"
   const content = /*html*/ `
-      <div class="Cover">
-        <h1>Register here</h1>
-        <form method="POST" action="/sign-up" class="Row">
-          <div class="Stack" style="--gap: 0.25rem">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="Stack" style="--gap: 0.25rem">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-          </div>
-          <button class="Button">Sign up</button>
+  <div class="signup-wrapper">
+    <div class="signup-container">
+        <h1 class="signup-heading">Register here</h1>
+        <form method="POST" action="/sign-up" class="signup-form">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-input" required>
+            </div>
+            <button type="submit" class="signup-button">Sign up</button>
         </form>
-      </div>
+    </div>
+</div>
 `;
-  return layout(title, content);
+  return layout(title, content, style);
 }
 
 function logIn() {
   const title = "Log in page";
+  const style = "../login.css"
   const content = /*html*/ `
-  <div class="Cover">
-    <h1>Log in</h1>
-    <form method="POST" action="/log-in" class="Row">
-      <div class="Stack" style="--gap: 0.25rem">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="Stack" style="--gap: 0.25rem">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button class="Button">Log in</button>
-    </form>
-  </div>
+  <div class="login-wrapper">
+        <div class="login-container">
+            <h1 class="login-heading">Log in</h1>
+            <form method="POST" action="/log-in" class="login-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                </div>
+                <button type="submit" class="login-button">Log in</button>
+            </form>
+        </div>
+    </div>
   `;
-  return layout(title, content);
+  return layout(title, content, style);
 }
 function addBookReview() {
   const title = "Adding a book review";
