@@ -23,10 +23,54 @@ h1 {
 }
 
 ul {
-  margin-top: 2.5rem;
+  margin-top: 5rem;
 }
 
 /* Hover state */
 .logOutButton:hover {
   background-color: #f5c1c1; /* Darker background color on hover */
+}
+
+/* Style the form container */
+.Stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 2px;
+}
+
+/* Style the labels */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="range"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Style the rating input */
+input[type="range"] {
+  width: auto;
+}
+
+/* Style the button */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add hover effect to the button */
+button:hover {
+  background-color: #0056b3;
 }
