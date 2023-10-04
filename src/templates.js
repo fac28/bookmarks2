@@ -29,12 +29,12 @@ function homePage() {
   <div class="hero">
     <div class="container">
       <div class="container1">
-        <h1>Bookmarks</h1>
-        <h2>The top secret bookshelf, shhhh</h2>
+        <h1 class="title">Bookmarks</h1>
+        <h2 class="sub-title">The top secret bookshelf, shhhh</h2>
       </div>
       <div class="container2">
-        <a href="/sign-up" class="Button">Sign up</a>
-        <a href="/log-in" class="Button">Log in</a>
+        <a href="/sign-up" class="button">Sign up</a>
+        <a href="/log-in" class="button">Log in</a>
       </div>
     </div>
   </div>
