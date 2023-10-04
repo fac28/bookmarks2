@@ -1,34 +1,69 @@
 const { ratingsConverter } = require("./utils/ratingsConverter");
 
-function homePage() {
+function layout(title, content) {
   return /*html*/ `
-  <h1>Bookmarks</h1>
-  <a href="/sign-up" class="Button">Sign up</a>
-  <a href="/log-in" class="Button">Log in</a>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>${title}</title>
+      <link rel="stylesheet" href="normalize.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;900&display=swap" rel="stylesheet">
+  </head>
+    <body>
+      ${content}
+    </body>
+  </html>
   `;
 }
 
+function homePage() {
+  const title = "Home page"
+  const content = /*html*/ `
+  <div class="hero">
+    <div class="container">
+      <div class="container1">
+        <h1>Bookmarks</h1>
+        <h2>The top secret bookshelf, shhhh</h2>
+      </div>
+      <div class="container2">
+        <a href="/sign-up" class="Button">Sign up</a>
+        <a href="/log-in" class="Button">Log in</a>
+      </div>
+    </div>
+  </div>
+  `;
+  return layout(title, content)
+}
+
 function signUpPage() {
-  return /*html*/ `
-<div class="Cover">
-  <h1>Register here</h1>
-  <form method="POST" action="/sign-up" class="Row">
-    <div class="Stack" style="--gap: 0.25rem">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="Stack" style="--gap: 0.25rem">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button class="Button">Sign up</button>
-  </form>
-</div>
+  const title = "Sign up page";
+  const content = /*html*/ `
+      <div class="Cover">
+        <h1>Register here</h1>
+        <form method="POST" action="/sign-up" class="Row">
+          <div class="Stack" style="--gap: 0.25rem">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="Stack" style="--gap: 0.25rem">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button class="Button">Sign up</button>
+        </form>
+      </div>
 `;
+  return layout(title, content);
 }
 
 function logIn() {
-  return /*html*/ `
+  const title = "Log in page"
+  const content = /*html*/ `
   <div class="Cover">
     <h1>Log in</h1>
     <form method="POST" action="/log-in" class="Row">
@@ -44,9 +79,11 @@ function logIn() {
     </form>
   </div>
   `;
+  return layout(title, content)
 }
 function addBookReview() {
-  return /*html*/ `
+  const title = "Adding a book review"
+  const content =  /*html*/ `
 <div>
   <h1>Add a review</h1>
   <form method="POST" action="/submit-book">
@@ -62,10 +99,12 @@ function addBookReview() {
   </form>
 </div>
 `;
+return layout(title, content);
 }
 
 function displayYourBooks(books) {
-  return /*html*/ `
+  const title = "Displaying books"
+  const content = /*html*/ `
   <div class="Cover">
       <h1>Add a book</h1>
       <form method="POST" class="Stack" style="--gap: 0.5rem">
@@ -108,6 +147,7 @@ function displayYourBooks(books) {
       <a href="/log-out" class="Button">Log out</a>
     </div> 
   `;
+  return layout(title, content)
 }
 
 module.exports = {
