@@ -28,6 +28,8 @@ server.use('/sign-up', signUpRoutes);
 server.use('/my-shelf', userPageRoute);
 server.get('/my-shelf/:user_id', userPageRoute.get);
 server.post('/my-shelf/:user_id', body, userPageRoute.post);
-server.use('/log-in', logIn)
+server.use('/log-in', logIn);
+server.get('/my-shelf/:user_id', logIn.get);
+server.post('/my-shelf/:user_id', body, logIn.post);
 
 module.exports = server;
