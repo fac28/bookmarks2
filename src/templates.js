@@ -1,3 +1,11 @@
+function homePage() {
+  return /*html*/ `
+  <h1>Bookmarks</h1>
+  <a href="/sign-up" class="Button">Sign up</a>
+  <a href="/log-in" class="Button">Log in</a>
+  `;
+}
+
 function signUpPage() {
   return /*html*/ `
 <div class="Cover">
@@ -95,4 +103,7 @@ function displayYourBooks(books) {
   `;
 }
 
-module.exports = { signUpPage, addBookReview, displayYourBooks, logIn };
+
+module.exports = {homePage, signUpPage, addBookReview, displayYourBooks, logIn };
+
+
