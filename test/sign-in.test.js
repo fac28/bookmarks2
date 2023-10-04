@@ -1,7 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert");
 const { reset, request, getSession, get_sid } = require("./helpers.js");
-const { getUserByEmail } = require("../src/model/user.js");
 const bcrypt = require("bcryptjs");
 const { createUser } = require("../src/model/user.js");
 
