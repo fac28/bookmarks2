@@ -36,9 +36,44 @@ function addBookReview() {
 `;
 }
 
-function displayYourBooks() {
+function displayYourBooks(books) {
   return /*html*/ `
-  <h1></h1>
+  <div class="Cover">
+      <h1>Add a book</h1>
+      <form method="POST" class="Stack" style="--gap: 0.5rem">
+        <div class="Stack" style="--gap: 0.25rem">
+          <label for="title">Book Title</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="Stack" style="--gap: 0.25rem">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" required>
+        </div>
+        <div class="Stack" style="--gap: 0.25rem">
+          <label for="review">Review</label>
+          <input type="text" id="review" name="review" required>
+        </div>
+        <div class="Stack" style="--gap: 0.25rem">
+          <label for="rating">Rating</label>
+          <input type="number" id="rating" name="rating" min="1" max="5" required>
+        </div>
+        <button>Add Your Review</button>
+      </form>
+      <ul class="Center Stack">
+        ${books
+          .map(
+            (entry) => `
+            <li>
+              <h2>${entry.title}</h2>
+              <p>${entry.author}</p>
+              <p>${entry.review}</p>
+              <p>${entry.rating}</p>
+            </li>
+            `
+          )
+          .join("")}
+      </ul>
+    </div> 
   `;
 }
 
