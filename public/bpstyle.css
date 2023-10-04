@@ -1,0 +1,38 @@
+html {
+  background-color: #d7c2c1;
+}
+
+h1 {
+  color: #fa5b52;
+}
+
+/* Style for the logOutButton */
+.logOutButton {
+  margin-top: 2.5rem;
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding to your liking */
+  background-color: white; /* Button background color */
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underlines from links */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth color transition on hover */
+
+  /* Optional: Add more styles for hover and focus states */
+}
+
+ul {
+  margin-top: 5rem;
+}
+
+/* Hover state */
+.logOutButton:hover {
+  background-color: #2980b9; /* Darker background color on hover */
+}
+
+/* Focus state (for keyboard navigation) */
+.logOutButton:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 3px #3498db; /* Add a subtle box-shadow on focus */
+}

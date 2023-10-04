@@ -1,6 +1,6 @@
 const { ratingsConverter } = require("./utils/ratingsConverter");
 
-function layout(title, content) {
+function layout(title, content, style) {
   return /*html*/ `
   <!DOCTYPE html>
   <html lang="en">
@@ -9,7 +9,7 @@ function layout(title, content) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>${title}</title>
       <link rel="stylesheet" href="normalize.css">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="${style}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;900&display=swap" rel="stylesheet">
@@ -22,8 +22,10 @@ function layout(title, content) {
 }
 
 function homePage() {
-  const title = "Home page"
+  const title = "Home page";
+  const style = "style.css";
   const content = /*html*/ `
+  
   <div class="hero">
     <div class="container">
       <div class="container1">
@@ -37,7 +39,7 @@ function homePage() {
     </div>
   </div>
   `;
-  return layout(title, content)
+  return layout(title, content, style);
 }
 
 function signUpPage() {
@@ -62,7 +64,7 @@ function signUpPage() {
 }
 
 function logIn() {
-  const title = "Log in page"
+  const title = "Log in page";
   const content = /*html*/ `
   <div class="Cover">
     <h1>Log in</h1>
@@ -79,11 +81,11 @@ function logIn() {
     </form>
   </div>
   `;
-  return layout(title, content)
+  return layout(title, content);
 }
 function addBookReview() {
-  const title = "Adding a book review"
-  const content =  /*html*/ `
+  const title = "Adding a book review";
+  const content = /*html*/ `
 <div>
   <h1>Add a review</h1>
   <form method="POST" action="/submit-book">
@@ -99,14 +101,15 @@ function addBookReview() {
   </form>
 </div>
 `;
-return layout(title, content);
+  return layout(title, content);
 }
 
 function displayYourBooks(books) {
-  const title = "Displaying books"
+  const title = "Your shelf";
+  const style = "../bpstyle.css";
   const content = /*html*/ `
-  <div class="Cover">
-      <h1>Add a book</h1>
+  <div class="bookpageCover">
+      <h1>Welcome to your shelf.</h1>
       <form method="POST" class="Stack" style="--gap: 0.5rem">
         <div class="Stack" style="--gap: 0.25rem">
           <label for="title">Book Title</label>
@@ -144,10 +147,10 @@ function displayYourBooks(books) {
           )
           .join("")}
       </ul>
-      <a href="/log-out" class="Button">Log out</a>
+      <a href="/log-out" class="logOutButton">Log out</a>
     </div> 
   `;
-  return layout(title, content)
+  return layout(title, content, style);
 }
 
 module.exports = {
