@@ -6,7 +6,7 @@ const { createUser } = require("../src/model/user.js");
 
 test("POST /log-in creates a new session", async () => {
   reset();
-  const hash = await bcrypt.hash("fac,test this", 12);
+  const hash = await bcrypt.hash("meshuggah", 12);
   createUser("user@test.com", hash);
 
   const { status, headers } = await request("/log-in", {
