@@ -4,13 +4,15 @@ const server = require(`../${DIR}/server.js`);
 const db = require(`../${DIR}/database/db.js`);
 const { createUser, getUserByEmail } = require(`../${DIR}/model/user.js`);
 const { getSession, createSession } = require(`../${DIR}/model/session.js`);
+const { listConfessions } = require(`../${DIR}/model/confessions.js`);
+
 function reset() {
   db.exec(/*sql*/ `
-      DELETE FROM books;
-      DELETE FROM sessions;
-      DELETE FROM users;
-      DELETE FROM sqlite_sequence WHERE name IN ('books', 'sessions', 'users');
-    `);
+    DELETE FROM confessions;
+    DELETE FROM sessions;
+    DELETE FROM users;
+    DELETE FROM sqlite_sequence WHERE name IN ('confessions', 'sessions', 'users');
+  `);
 }
 
 async function request(pathname, options = {}) {
@@ -25,11 +27,20 @@ async function request(pathname, options = {}) {
   return { status: response.status, body, headers };
 }
 
+function get_sid(headers) {
+  const [sid_cookie] = headers["set-cookie"].split(".");
+  const encoded_sid = sid_cookie.replace("sid=s%3A", "");
+  return decodeURIComponent(encoded_sid);
+}
+
 module.exports = {
   reset,
-  request,
+  db,
   createUser,
   getUserByEmail,
   getSession,
-  createSession
+  createSession,
+  listConfessions,
+  request,
+  get_sid,
 };
