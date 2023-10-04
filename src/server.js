@@ -14,6 +14,9 @@ const cookies = cookieParser(process.env.COOKIE_SECRET);
 
 const body = express.urlencoded({ extended: false });
 
+
+
+
 //Middleware
 // server.use((req, res, next) => {
 //   const time = new Date().toLocaleTimeString("en-GB");
