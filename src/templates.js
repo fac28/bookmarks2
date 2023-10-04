@@ -99,11 +99,15 @@ function displayYourBooks(books) {
           )
           .join("")}
       </ul>
+      <a href="/log-out" class="Button">Log out</a>
     </div> 
   `;
 }
 
-
-module.exports = {homePage, signUpPage, addBookReview, displayYourBooks, logIn };
-
-
+module.exports = {
+  homePage,
+  signUpPage,
+  addBookReview,
+  displayYourBooks,
+  logIn,
+};
