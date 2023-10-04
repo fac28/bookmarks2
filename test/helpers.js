@@ -2,7 +2,8 @@ const DIR = "src";
 
 const server = require(`../${DIR}/server.js`);
 const db = require(`../${DIR}/database/db.js`);
-
+const { createUser, getUserByEmail } = require(`../${DIR}/model/user.js`);
+const { getSession, createSession } = require(`../${DIR}/model/session.js`);
 function reset() {
   db.exec(/*sql*/ `
       DELETE FROM books;
@@ -27,4 +28,8 @@ async function request(pathname, options = {}) {
 module.exports = {
   reset,
   request,
+  createUser,
+  getUserByEmail,
+  getSession,
+  createSession
 };
