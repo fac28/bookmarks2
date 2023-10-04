@@ -13,6 +13,8 @@ test("POST /sign-up creates new user", async () => {
     headers: { "content-type": "application/x-www-form-urlencoded" },
   });
 
+  console.log(status);
+  console.log(headers);
   const user = getUserByEmail("test@test.com");
   console.log(user);
   assert.equal(user.id, 1);
