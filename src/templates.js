@@ -89,26 +89,6 @@ function logIn() {
   `;
   return layout(title, content, style);
 }
-function addBookReview() {
-  const title = "Adding a book review";
-  const content = /*html*/ `
-<div>
-  <h1>Add a review</h1>
-  <form method="POST" action="/submit-book">
-    <div>
-      <label for="book-title">Book title</label>
-      <input type="text" id="title" name="title" required>
-    </div>
-    <div>
-      <label for="book-author">Book author</label>
-      <input type="text" id="author" name="author" required>
-    </div>
-    <button class="Button">Submit book</button>
-  </form>
-</div>
-`;
-  return layout(title, content);
-}
 
 function displayYourBooks(books) {
   const title = "Your shelf";
@@ -162,7 +142,6 @@ function displayYourBooks(books) {
 module.exports = {
   homePage,
   signUpPage,
-  addBookReview,
   displayYourBooks,
   logIn,
 };
