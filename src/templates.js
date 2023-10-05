@@ -43,7 +43,7 @@ function homePage() {
 
 function signUpPage() {
   const title = "Sign up page";
-  const style = "../signup.css"
+  const style = "../signup.css";
   const content = /*html*/ `
   <div class="signup-wrapper">
     <div class="signup-container">
@@ -67,7 +67,7 @@ function signUpPage() {
 
 function logIn() {
   const title = "Log in page";
-  const style = "../login.css"
+  const style = "../login.css";
   const content = /*html*/ `
   <div class="login-wrapper">
         <div class="login-container">
@@ -88,6 +88,7 @@ function logIn() {
   `;
   return layout(title, content, style);
 }
+
 function addBookReview() {
   const title = "Adding a book review";
   const content = /*html*/ `
@@ -108,6 +109,7 @@ function addBookReview() {
 `;
   return layout(title, content);
 }
+
 
 function displayYourBooks(books) {
   const title = "Your shelf";
@@ -148,6 +150,7 @@ function displayYourBooks(books) {
             <input type="hidden" name="book_id" value="${entry.id}">
             <button class="form__button-icon delete" type="submit">Delete</button>
           </form>
+
             `
           )
           .join("")}
@@ -161,7 +164,6 @@ function displayYourBooks(books) {
 module.exports = {
   homePage,
   signUpPage,
-  addBookReview,
   displayYourBooks,
   logIn,
 };
