@@ -26,6 +26,12 @@ cd bookmarks2
 npm install
 ```
 
+4. Rebuild better-sqlite3:
+
+```shell
+npm rebuild better-sqlite3
+```
+
 ### Running Locally
 
 To run the project locally, follow these steps:
