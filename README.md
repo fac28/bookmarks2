@@ -62,9 +62,9 @@ npm run dev
 
 ### Team
 
-Issy: UX/UI <br>
 Elena: Scrum <br>
 George: DevOps <br>
+Issy: UX/UI <br>
 Tommaso: QA  
 
 ### Schema
