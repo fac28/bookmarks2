@@ -44,7 +44,7 @@ function homePage() {
 
 function signUpPage() {
   const title = "Sign up page";
-  const style = "../signup.css"
+  const style = "../signup.css";
   const content = /*html*/ `
   <div class="signup-wrapper">
     <div class="signup-container">
@@ -68,7 +68,7 @@ function signUpPage() {
 
 function logIn() {
   const title = "Log in page";
-  const style = "../login.css"
+  const style = "../login.css";
   const content = /*html*/ `
   <div class="login-wrapper">
         <div class="login-container">
@@ -144,11 +144,11 @@ function displayYourBooks(books) {
               <p>${entry.author}</p>
               <p>${entry.review}</p>
               <p>${ratingsConverter(entry.rating)}</p>
-            </li>
-            <form action="/delete" method="POST">
-            <input type="hidden" name="book_id" value="${entry.id}">
-            <button class="form__button-icon delete" type="submit">Delete</button>
-          </form>
+              <form action="/delete" method="POST">
+              <input type="hidden" name="book_id" value="${entry.id}">
+              <button class="form__button-icon delete" type="submit">Delete</button>
+              </form>
+              </li>
             `
           )
           .join("")}
