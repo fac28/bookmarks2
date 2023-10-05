@@ -73,6 +73,45 @@ Tommaso: QA
   <img src="https://github.com/fac28/bookmarks/assets/59057287/4c83fbb1-8a05-4adb-a2a9-29bb88c71ffa" width="600"/>
 </div>
 
+<details>
+<summary><code>users</code></summary>
+
+| column     | type     | constraints               |
+| ---------- | -------- | ------------------------- |
+| id         | integer  | primary key autoincrement |
+| email      | text     | unique                    |
+| hash       | text     |                           |
+| created_at | datetime | DEFAULT CURRENT_TIMESTAMP |
+
+</details>
+
+<details>
+<summary><code>sessions</code></summary>
+
+| column     | type     | constraints               |
+| ---------- | -------- | ------------------------- |
+| id         | integer  | primary key               |
+| user_id    | text     | foreign key               |
+| expires_at | datetime | NOT NULL                  |
+| created_at | datetime | DEFAULT CURRENT_TIMESTAMP |
+
+</details>
+
+<details>
+<summary><code>books</code></summary>
+
+| column     | type     | constraints               |
+| ---------- | -------- | ------------------------- |
+| id         | integer  | primary key autoincrement |
+| user_id    | text     | foreign key               |
+| title      | text     |                           |
+| author     | text     |                           |
+| review     | text     |                           |
+| rating     | text     |                           |
+| created_at | datetime | DEFAULT CURRENT_TIMESTAMP |
+
+</details>
+
 ### Security 
 
 <ol>
