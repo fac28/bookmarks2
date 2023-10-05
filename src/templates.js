@@ -8,7 +8,6 @@ function layout(title, content, style) {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>${title}</title>
-      <link rel="stylesheet" href="normalize.css">
       <link rel="stylesheet" href="${style}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,18 +91,18 @@ function logIn() {
 function addBookReview() {
   const title = "Adding a book review";
   const content = /*html*/ `
-<div>
+  <div class="review-form">
   <h1>Add a review</h1>
   <form method="POST" action="/submit-book">
-    <div>
-      <label for="book-title">Book title</label>
+    <div class="form-group">
+      <label for="title">Book title</label>
       <input type="text" id="title" name="title" required>
     </div>
-    <div>
-      <label for="book-author">Book author</label>
+    <div class="form-group">
+      <label for="author">Book author</label>
       <input type="text" id="author" name="author" required>
     </div>
-    <button class="Button">Submit book</button>
+    <button class="submit-button">Submit book</button>
   </form>
 </div>
 `;
@@ -140,10 +139,10 @@ function displayYourBooks(books) {
           .map(
             (entry) => `
             <li>
-              <h2>${entry.title}</h2>
-              <p>${entry.author}</p>
-              <p>${entry.review}</p>
-              <p>${ratingsConverter(entry.rating)}</p>
+              <span class="Title">Title: ${entry.title}</span>
+              <span class="Author">Author: ${entry.author}</span>
+              <p>Review: ${entry.review}</p>
+              <p>Rating: ${ratingsConverter(entry.rating)}</p>
             </li>
             <form action="/delete" method="POST">
             <input type="hidden" name="book_id" value="${entry.id}">
