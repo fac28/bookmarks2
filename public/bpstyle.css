@@ -4,6 +4,9 @@ html {
 
 h1 {
   color: #fa5b52;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Style for the logOutButton */
@@ -24,6 +27,7 @@ h1 {
 
 ul {
   margin-top: 5rem;
+
 }
 
 /* Hover state */
@@ -35,8 +39,34 @@ ul {
 .Stack {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 2px;
+}
+
+.Center {
+  list-style-type: none;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+li  {
+  width: auto;
+  padding: 20px;
+}
+
+.Title {
+  font-size: 25px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.Author {
+  font-size: 20px;
+}
+@media (max-width:768px) {
+  li {
+    width: 70%;
+  }
 }
 
 /* Style the labels */
@@ -73,4 +103,73 @@ button {
 /* Add hover effect to the button */
 button:hover {
   background-color: #0056b3;
+}
+
+/* Add a book review form */
+/* Mobile Styles */
+
+.review-form {
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .review-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .submit-button {
+    width: auto;
+  }
 }
