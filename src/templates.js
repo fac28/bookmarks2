@@ -89,28 +89,6 @@ function logIn() {
   return layout(title, content, style);
 }
 
-function addBookReview() {
-  const title = "Adding a book review";
-  const content = /*html*/ `
-  <div class="review-form">
-  <h1>Add a review</h1>
-  <form method="POST" action="/submit-book">
-    <div class="form-group">
-      <label for="title">Book title</label>
-      <input type="text" id="title" name="title" required>
-    </div>
-    <div class="form-group">
-      <label for="author">Book author</label>
-      <input type="text" id="author" name="author" required>
-    </div>
-    <button class="submit-button">Submit book</button>
-  </form>
-</div>
-`;
-  return layout(title, content);
-}
-
-
 function displayYourBooks(books) {
   const title = "Your shelf";
   const style = "../bpstyle.css";
